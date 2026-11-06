@@ -58,5 +58,5 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '')));
 app.listen(process.env.PORT || 10000, () => console.log(`Zahra AI chal rahi hai: http://localhost:${PORT}`));
