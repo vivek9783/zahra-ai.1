@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07000f">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>Zahra AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>ZAHRA <span>AI</span></h1>
+    <nav>
+      <button data-open="sChat" aria-label="Chat">💬</button>
+      <button data-open="sTools" aria-label="Tools">🧰</button>
+      <button data-open="sSet" aria-label="Settings">⚙️</button>
+    </nav>
+  </header>
+  <section class="stage">
+    <div id="orb" class="orb idle"><i></i><i></i><i></i><b></b></div>
+    <p id="status">Namaste! Mic dabao aur bolo.</p>
+    <p id="caption"></p>
+    <div id="actions"></div>
+  </section>
+  <footer>
+    <input id="txt" placeholder="Zahra se kuch bhi poocho…" autocomplete="off" enterkeyhint="send">
+    <button id="send" aria-label="Send">➤</button>
+    <button id="mic" class="mic" aria-label="Mic">🎤</button>
+  </footer>
+</main>
+
+<aside id="sChat" class="sheet"><div class="bar"><h2>Chat history</h2><button data-close>✕</button></div><div id="log"></div></aside>
+
+<aside id="sTools" class="sheet"><div class="bar"><h2>Tools</h2><button data-close>✕</button></div>
+  <div class="body">
+    <h3>Calculator</h3>
+    <div class="row"><input id="calcIn" placeholder="jaise 12*5+3"><button id="calcBtn">=</button></div>
+    <p id="calcOut"></p>
+    <h3>Reminder</h3>
+    <div class="row"><input id="remMin" type="number" min="1" placeholder="Minute"><input id="remTxt" placeholder="Kis baare me?"><button id="remBtn">Set</button></div>
+    <p class="hint">Reminder tabhi bajega jab Zahra app khula ho (browser limit).</p>
+    <h3>Notes</h3>
+    <div class="row"><input id="noteIn" placeholder="Naya note"><button id="noteBtn">Save</button></div>
+    <ul id="notes"></ul>
+  </div>
+</aside>
+
+<aside id="sSet" class="sheet"><div class="bar"><h2>Settings</h2><button data-close>✕</button></div>
+  <div class="body">
+    <label>Bhasha<select id="lang"><option value="hi-IN">Hindi (hi-IN)</option><option value="en-IN">English (en-IN)</option></select></label>
+    <label>Awaaz (voice)<select id="voice"></select></label>
+    <label>Bolne ki speed: <span id="rateVal">1</span><input id="rate" type="range" min="0.6" max="1.4" step="0.1"></label>
+    <label class="chk"><input id="auto" type="checkbox"> Jawab bolkar sunao</label>
+    <button id="testVoice">Awaaz test karo</button>
+    <button id="clearChat">Chat history saaf karo</button>
+    <button id="wipe" class="danger">Saara data delete karo</button>
+    <p class="hint">Data sirf aapke phone me (LocalStorage) save hota hai. Password ya bank details yahan mat likhna.</p>
+  </div>
+</aside>
+<script src="app.js"></script>
+</body>
+</html>
